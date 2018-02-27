@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+<header th:replace="fragments :: header"></header>
+
+<style>
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 16px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+</style>
+
+
+<article>
+    <div>
+        <h1>Moon Spa</h1>
+            <input type="text" id="datepicker" aria-describedby="basic-addon1"/>
+
+
+        <h1>Pick Here</h1>
+
+
+
+
+        <table>
+            <tr>
+                <th>Sauna Name</th>
+                <th>Sauna Number</th>
+                <th>Availablity</th>
+            </tr>
+            <tr th:each="sauna : ${saunas}">
+                <td th:text="${sauna.saunaName}">Sauna Name</td>
+                <td th:text="${sauna.saunaNumber}">Sauna Number</td>
+                <td th:text="${sauna.guestId} !=0? 'UNAVAILABLE' : 'AVAILABLE' "></td>
+            </tr>
+        </table>
+
+
+        <!--<button><a href="'home/' + {sauna.saunaId}"</a></button>-->
+
+
+
+    </div>
+</article>
+<aside>
+    <div>
+        <h3>Room spotlight</h3>
+        <p>Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id
+            pulvinar odio lorem non turpis. Nullam sit amet enim. Lorem ipsum dolor
+            sit amet, consect etuer adipiscing elit. Orci magna rhoncus neque, id
+            pulvinar odio lorem non turpis.</p>
+    </div>
+</aside>
+</body>
+</html>

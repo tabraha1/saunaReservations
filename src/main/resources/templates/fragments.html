@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:fragment="head">
+    <meta http-equiv="Content-Type" contents="text/html" charset="UTF-8"/>
+    <title th:text="${title}">Moon Spa</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/ui-darkness/jquery-ui.css"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/menu.css}" />
+    <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script th:src="@{/site.js}"></script>
+</head>
+<body>
+
+    <header th:fragment="header" class="header">
+        <a class="logo" href="#"><span>Everyday Things</span></a>
+    <nav>
+        <ul>
+            <li><a href="#">Spa</a>
+                <ul>
+                    <li><a href="#">Sub link 1</a></li>
+                    <li><a href="#">Sub link 1</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Anemeties</a></li>
+            <li><a href="#">Rooms</a>
+                <ul>
+                    <li><a href="#">Sub link 1</a></li>
+                    <li><a href="#">Sub link 2</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Contact us</a></li>
+        </ul>
+    </nav>
+    </header>
+
+</body>
+</html>
