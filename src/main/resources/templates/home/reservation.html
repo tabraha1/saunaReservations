@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:fragment="head">
+    <meta http-equiv="Content-Type" contents="text/html" charset="UTF-8"/>
+    <title th:text="${title}">Moon Spa</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/ui-darkness/jquery-ui.css"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/menu.css}" />
+    <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script th:src="@{/site.js}"></script>
+</head>
+<body>
+<header th:replace="fragments :: header"></header>
+
+<!--<form method="post">-->
+<!--<input type="text" id="datepicker" aria-describedby="basic-addon1"/>-->
+    <!--<input type="submit" value="create reservation" />-->
+<!--</form>-->
+
+<h1 th:text="${name}"></h1>
+
+<h2 th:text="${sauna}"></h2>
+
+<h3 th:text="${date}"></h3>
+
+
+<!--<form class="form-horizontal" th:object="${reservation}" th:action="@{|${guestId}|}"  method="post">-->
+
+    <!--<input type="hidden" th:value="*{saunaId}" th:field="*{saunaId}"/>-->
+
+    <!--<br/>-->
+
+    <!--<input type="hidden" th:value="*{guestId}" th:field="*{guestId}"/>-->
+
+    <!--<br />-->
+
+    <!--&lt;!&ndash;<input type="hidden" th:value="*{date}" th:field="*{date}"/>&ndash;&gt;-->
+
+    <input type="text" id="datepicker" aria-describedby="basic-addon1"/>
+
+    <input type="submit" value="Create Reservation" />
+
+<!--</form>- -->
+
+<!--<input type="submit" method="post" action="/{guestId}"/>-->
+
+</body>
+</html>

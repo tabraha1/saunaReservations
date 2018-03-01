@@ -70,7 +70,7 @@ public class ReservationService {
         return saunaReservations;
     }
 
-    private Date createDateFromDateString(String dateString) {
+    public Date createDateFromDateString(String dateString) {
         Date date = null;
         if(dateString != null) {
             try {
@@ -85,21 +85,18 @@ public class ReservationService {
     }
 
 
-    public SaunaReservation createReservation(Guest guest, Sauna sauna, String dateString) {
+    public Reservation createReservation(Guest guest, Sauna sauna, String dateString) {
 
         Date date = this.createDateFromDateString(dateString);
 
-        SaunaReservation saunaReservation = new SaunaReservation();
-        saunaReservation.setSaunaId(sauna.getId());
-        saunaReservation.setGuestId(guest.getId());
-        saunaReservation.setFirstName(guest.getFirstName());
-        saunaReservation.setLastName(guest.getLastName());
-        saunaReservation.setSaunaNumber(sauna.getNumber());
-        saunaReservation.setSaunaName(sauna.getName());
-        saunaReservation.setDate(date);
+        java.sql.Date newDate = new java.sql.Date(date.getTime());
 
+            Reservation reservation = new Reservation();
+            reservation.setSaunaId(sauna.getId());
+            reservation.setGuestId(guest.getId());
+            reservation.setDate(newDate);
 
-        return saunaReservation;
+            return reservation;
 
     }
 

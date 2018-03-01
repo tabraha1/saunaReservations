@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="${title}">Moon Spa</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/menu.css}" />
+</head>
+<body>
+<header th:replace="fragments :: header"></header>
+
+<style>
+    body {
+        margin: 0 auto;
+        text-align: center;
+    }
+</style>
+
+<h1>Complete!</h1>
+
+<!--<h1 th:text="${last}"></h1>-->
+
+<!--<p th:text="${first}"></p>-->
+
+<!--<p><a th:href="'/book-sauna/' + ${guest}">Add a Private Sauna</a></p>-->
+
+<h1 th:text="${name}"></h1>
+<h2 th:text="${sauna}"></h2>
+<h3 th:text="${reservation}"></h3>
+
+<h2 th:text="${date}"></h2>
+
+</body>
+</html>

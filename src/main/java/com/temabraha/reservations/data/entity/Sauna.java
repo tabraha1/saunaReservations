@@ -3,6 +3,8 @@ package com.temabraha.reservations.data.entity;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="SAUNA")
@@ -27,6 +29,7 @@ public class Sauna {
     @Size(max = 10)
     @Column(name = "STEAM_INFO")
     private String steamInfo;
+
 
     public long getId() {
         return id;

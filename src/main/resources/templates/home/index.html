@@ -26,7 +26,7 @@ tr:nth-child(even) {
 <article>
     <div>
         <h1>Moon Spa</h1>
-            <input type="text" id="datepicker" aria-describedby="basic-addon1"/>
+        <input type="text" id="datepicker" aria-describedby="basic-addon1"/>
 
 
         <h1>Pick Here</h1>
@@ -36,14 +36,21 @@ tr:nth-child(even) {
 
         <table>
             <tr>
+                <th>Image</th>
                 <th>Sauna Name</th>
                 <th>Sauna Number</th>
-                <th>Availablity</th>
+                <th>Availbility</th>
+
             </tr>
             <tr th:each="sauna : ${saunas}">
+                <td><img th:attr="src=@{'/images/sauna' + ${sauna.saunaId} + '.jpg'}"/></td>
                 <td th:text="${sauna.saunaName}">Sauna Name</td>
                 <td th:text="${sauna.saunaNumber}">Sauna Number</td>
-                <td th:text="${sauna.guestId} !=0? 'UNAVAILABLE' : 'AVAILABLE' "></td>
+                <td th:if="${sauna.guestId}">
+                    Unavailable</td>
+                <td th:unless="${sauna.guestId}">
+                    <p><a th:href="'/home/' + ${date} + '/' + ${sauna.saunaId}">Available</a></p>
+                </td>
             </tr>
         </table>
 
